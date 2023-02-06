@@ -1,3 +1,121 @@
+@font-face { /*this is to add a custom font to the html file*/
+    font-family: BreatheFire;
+    src: url(BreatheFire.ttf);
+}
+body{
+    font-family: BreatheFire;
+    font-size: 40px;
+    background-color: black;
+    text-align: center;
+}
 *{
     box-sizing: border-box;
+}
+h1{
+    color: white;
+    font-size: 40px;
+}
+.container{
+    position: relative; 
+    display: inline-block;
+}
+.smallcon{
+    position: absolute; 
+    display: flex; 
+    width: 100%; 
+    align-items: center; 
+    padding: 20px;
+}
+#timer{
+    background-color: rgb(49, 0, 114); 
+    width: 100px; 
+    height: 60px; 
+    flex-shrink: 0; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    color: white;
+    text-align: center;
+    border-top: 6px solid rgb(142, 112, 252) ;
+    border-bottom: 6px solid rgb(142, 112, 252) ;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
+}
+.p1health{
+    position: relative; 
+    width: 100%;
+    border-top: 6px solid rgb(142, 112, 252) ;
+    border-left: 6px solid rgb(142, 112, 252) ;
+    border-bottom: 6px solid rgb(142, 112, 252) ;
+}
+.p2health{
+    position: relative; 
+    width: 100%;
+    border-top: 6px solid rgb(142, 112, 252) ;
+    border-right: 6px solid rgb(142, 112, 252) ;
+    border-bottom: 6px solid rgb(142, 112, 252)
+}
+#displayText{
+    position: absolute;
+            color: white; 
+            display: none;
+            align-items: center; 
+            justify-content: center; 
+            top: 0; 
+            right: 0; 
+            bottom: 0; 
+            left: 0;
+}
+#playAgain{    
+    position: absolute;
+        color:  white;  
+        display: none ;
+        align-items: center;
+        justify-content: center; 
+        top: 0; 
+        right: 0; 
+        bottom: -150px; 
+        left: 0;
+}
+#playerHealth{
+    position: absolute;
+    background: rgb(60, 105, 253); 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+}
+#healthBar1{
+    background-color: red; 
+    height: 30px; 
+    width: 100%;
+}
+#enemyHealth{
+    position: absolute;
+    background: rgb(60, 105, 253); 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+}
+#healthBar2{
+    background-color: red; 
+    height: 30px; 
+    width: 100%;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(142, 112, 252);
+    text-decoration: none;
+}
+a:active{
+    color: white;
+    text-decoration: none;
 }

@@ -18,6 +18,8 @@ function winner({player, enemy, timerId}){
     }else if(player.health < enemy.health){
         document.querySelector('#displayText').innerHTML = 'Player 2 Wins'
     }
+    document.querySelector('#playAgain').style.display = 'flex';
+    document.querySelector('#playAgain').innerText;
 }
 
 //timer function for clock

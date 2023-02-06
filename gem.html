@@ -1,51 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Baby's first game</title>
 </head>
 <body>
+    <h1>Knight vs. Knight</h1>
     <!--big container div-->
-    <div class="container" style="position: relative; display: inline-block;">
+    <div class="container">
         <!--small-->
-        <div class="smallcon" style="  position: absolute; display: flex; width: 100%; align-items: center; padding: 20px;">
+        <div class="smallcon">
             <!--player1 health-->
-            <div style="position: relative; height: 30px; width: 100%; display: flex; justify-content: flex-end;">
-                <div style="background-color: red; height: 30px; width: 100%;"></div>
-                <div id="playerHealth" style="position: absolute; background: yellow; top: 0; right: 0; bottom: 0; width: 100%";></div>
+            <div class="p1health" style="position: relative; width: 100%;">
+                <div id="healthBar1"></div>
+                <div id="playerHealth"></div>
             </div>
             <!--Timer-->
-            <div id="timer" style="  background-color: blue; width: 100px; height: 100px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+            <div id="timer">
                 10
             </div>
             <!--player2 health-->
-            <div style="position: relative; height: 30px; width: 100%;">
-                <div style="background-color: red; height: 30px; width: 100%;"></div>
-                <div id="enemyHealth" style="position: absolute; background: yellow; top: 0; right: 0; bottom: 0; left: 0;";></div>
+            <div class="p2health" style="position: relative; width: 100%;">
+                <div id = "healthBar2"></div>
+                <div id="enemyHealth"></div>
             </div>
         </div>
-        <div id="displayText"style="
-            position: absolute;
-            color: white; 
-            display: none;
-            align-items: center; 
-            justify-content: center; 
-            top: 0; 
-            right: 0; 
-            bottom: 0; 
-            left: 0;
-            "
-            >
-            
+        <div id="displayText">
             Draw
-        
         </div>
         <canvas></canvas>
     </div>
+    <div id = "playAgain">
+            <a href=gem.html> Play Again? </a>
+        </div>
     <script src="js/utilities.js"></script>
     <script src="js/classes.js"></script>
     <script src="script.js"></script>

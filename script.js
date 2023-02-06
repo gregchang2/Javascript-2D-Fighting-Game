@@ -16,24 +16,14 @@ const background = new Sprite({
     },
     imageSrc: './img/background.png'
 })
-//shop sprite
-const shop = new Sprite({
-    position:{
-        x:1170,
-        y:520
-    },
-    imageSrc: './img/shop.png',
-    scale: 3,
-    framesMax: 6
-})
 //background character
 const bgCh = new Sprite({
     position:{
-        x:1104,
-        y:824
+        x:800,
+        y:925
     },
     imageSrc: './img/ch/AnimationSheet_Character.png',
-    scale: 2.5,
+    scale: 2,
     framesMax:2,
 
 })
@@ -52,60 +42,60 @@ const player = new Fighter({
         x:0,
         y:0
     },
-    imageSrc: './img/samuraiMack/idle.png',
-    framesMax: 8,
-    scale: 2.7,
+    imageSrc: './img/player/_Idle.png',
+    framesMax: 10,
+    scale: 3,
     offset: {
-        x: 215,
-        y: 180
+        x: 90,
+        y: 0
     },
     sprites: {
        idle: {
-        imageSrc: './img/samuraiMack/Idle.png',
-        framesMax: 8
+        imageSrc: './img/player/_Idle.png',
+        framesMax: 10
        },
        run: {
-        imageSrc: './img/samuraiMack/Run.png',
-        framesMax: 8
+        imageSrc: './img/player/_Run.png',
+        framesMax: 10
         },
         jump: {
-            imageSrc: './img/samuraiMack/Jump.png',
-            framesMax: 2
+            imageSrc: './img/player/_Jump.png',
+            framesMax: 3
             },
         fall: {
-            imageSrc: './img/samuraiMack/Fall.png',
+            imageSrc: './img/player/_JumpFallinbetween.png',
             framesMax: 2
 
         },
         attack1: {
-            imageSrc: './img/samuraiMack/Attack1.png',
-            framesMax: 6
-        },
-        takeHit: {
-            imageSrc:'./img/samuraiMack/Take Hit.png',
+            imageSrc: './img/player/_Attack.png',
             framesMax: 4
         },
+        takeHit: {
+            imageSrc:'./img/player/_Hit.png',
+            framesMax: 1
+        },
         death: {
-            imageSrc:'./img/samuraiMack/Death.png',
-            framesMax: 6
+            imageSrc:'./img/player/_DeathNoMovement.png',
+            framesMax: 10
         }
 
         
     },
     attackBox: {
         offset: {
-            x:143,
-            y:20 
+            x:115,
+            y:100 
         },
-        width: 150,
-        height: 100
+        width: 145,
+        height: 130
     }
 })
 
 //p2 sprite
 const enemy = new Fighter({
     position: {
-        x: 400,
+        x: 1600,
         y: 100
     },
     velocity: {
@@ -116,52 +106,51 @@ const enemy = new Fighter({
         x: -50,
         y: 0
     },
-    imageSrc: './img/kenji/idle.png',
-    framesMax: 4,
-    scale: 2.7,
+    imageSrc: './img/enemy/_Idle.png',
+    framesMax: 10,
+    scale: 3,
     offset: {
-        x: 215,
-        y: 195
+        x: 90,
+        y: 0
     },
     sprites: {
        idle: {
-        imageSrc: './img/kenji/Idle.png',
-        framesMax: 4
+        imageSrc: './img/enemy/_Idle.png',
+        framesMax: 10
        },
        run: {
-        imageSrc: './img/kenji/Run.png',
-        framesMax: 8
+        imageSrc: './img/enemy/_Run.png',
+        framesMax: 10
         },
         jump: {
-            imageSrc: './img/kenji/Jump.png',
-            framesMax: 2
+            imageSrc: './img/enemy/_Jump.png',
+            framesMax: 3
             },
         fall: {
-            imageSrc: './img/kenji/Fall.png',
+            imageSrc: './img/enemy/_JumpFallinbetween.png',
             framesMax: 2
-
         },
         attack1: {
-            imageSrc: './img/kenji/Attack1.png',
+            imageSrc: './img/enemy/_Attack.png',
             framesMax: 4
 
         },
         takeHit: {
-            imageSrc:'./img/kenji/Take hit.png',
-            framesMax: 3
+            imageSrc:'./img/enemy/_Hit.png',
+            framesMax: 1
         },
         death: {
-            imageSrc:'./img/kenji/Death.png',
-            framesMax: 7
+            imageSrc:'./img/enemy/_DeathNoMovement.png',
+            framesMax: 10
         }
     },
     attackBox: {
         offset: {
-            x:-143,
-            y:20 
+            x:-70,
+            y:100 
         },
-        width: 150,
-        height: 100
+        width: 145,
+        height: 130
     }
 })
 
@@ -196,7 +185,6 @@ function animate() {
     c.fillStyle = 'black'
     c.fillRect(0, 0, canvas.width, canvas.height)
     background.update()
-    shop.update()
     bgCh.update()
     player.update()
     enemy.update()
@@ -253,7 +241,7 @@ function animate() {
             rectangle2: enemy
           }) &&
           player.attack &&
-          player.framesCurrent === 4
+          player.framesCurrent === 2
         ) {
         enemy.takeHit()
         player.attack = false
