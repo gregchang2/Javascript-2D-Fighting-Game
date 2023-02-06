@@ -144,7 +144,6 @@ class Fighter extends Sprite{
             return
         }
        
-        
         //overide with attack animation
         if(this.image === this.sprites.attack1.image && this.framesCurrent < this.sprites.attack1.framesMax -1)
         return
@@ -152,6 +151,7 @@ class Fighter extends Sprite{
         if(this.image === this.sprites.takeHit.image && this.framesCurrent < this.sprites.takeHit.framesMax -1)
         return
 
+        // this switch statement  
         switch (sprite) {
             case 'idle':
                 if (this.image !== this.sprites.idle.image) {

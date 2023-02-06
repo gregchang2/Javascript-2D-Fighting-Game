@@ -10,21 +10,21 @@ const gravity = 0.7
 
 //game background
 const background = new Sprite({
-    position:{
-        x:0,
-        y:0
+    position: {
+        x: 0,
+        y: 0
     },
     imageSrc: './img/background.png'
 })
 //background character
 const bgCh = new Sprite({
-    position:{
-        x:800,
-        y:925
+    position: {
+        x: 800,
+        y: 925
     },
     imageSrc: './img/ch/AnimationSheet_Character.png',
     scale: 2,
-    framesMax:2,
+    framesMax: 2,
 
 })
 
@@ -38,9 +38,9 @@ const player = new Fighter({
         x: 0,
         y: 0,
     },
-    offset:{
-        x:0,
-        y:0
+    offset: {
+        x: 0,
+        y: 0
     },
     imageSrc: './img/player/_Idle.png',
     framesMax: 10,
@@ -50,18 +50,18 @@ const player = new Fighter({
         y: 0
     },
     sprites: {
-       idle: {
-        imageSrc: './img/player/_Idle.png',
-        framesMax: 10
-       },
-       run: {
-        imageSrc: './img/player/_Run.png',
-        framesMax: 10
+        idle: {
+            imageSrc: './img/player/_Idle.png',
+            framesMax: 10
+        },
+        run: {
+            imageSrc: './img/player/_Run.png',
+            framesMax: 10
         },
         jump: {
             imageSrc: './img/player/_Jump.png',
             framesMax: 3
-            },
+        },
         fall: {
             imageSrc: './img/player/_JumpFallinbetween.png',
             framesMax: 2
@@ -72,20 +72,20 @@ const player = new Fighter({
             framesMax: 4
         },
         takeHit: {
-            imageSrc:'./img/player/_Hit.png',
+            imageSrc: './img/player/_Hit.png',
             framesMax: 1
         },
         death: {
-            imageSrc:'./img/player/_DeathNoMovement.png',
+            imageSrc: './img/player/_DeathNoMovement.png',
             framesMax: 10
         }
 
-        
+
     },
     attackBox: {
         offset: {
-            x:115,
-            y:100 
+            x: 115,
+            y: 100
         },
         width: 145,
         height: 130
@@ -102,7 +102,7 @@ const enemy = new Fighter({
         x: 0,
         y: 0,
     },
-    offset:{
+    offset: {
         x: -50,
         y: 0
     },
@@ -114,18 +114,18 @@ const enemy = new Fighter({
         y: 0
     },
     sprites: {
-       idle: {
-        imageSrc: './img/enemy/_Idle.png',
-        framesMax: 10
-       },
-       run: {
-        imageSrc: './img/enemy/_Run.png',
-        framesMax: 10
+        idle: {
+            imageSrc: './img/enemy/_Idle.png',
+            framesMax: 10
+        },
+        run: {
+            imageSrc: './img/enemy/_Run.png',
+            framesMax: 10
         },
         jump: {
             imageSrc: './img/enemy/_Jump.png',
             framesMax: 3
-            },
+        },
         fall: {
             imageSrc: './img/enemy/_JumpFallinbetween.png',
             framesMax: 2
@@ -136,18 +136,18 @@ const enemy = new Fighter({
 
         },
         takeHit: {
-            imageSrc:'./img/enemy/_Hit.png',
+            imageSrc: './img/enemy/_Hit.png',
             framesMax: 1
         },
         death: {
-            imageSrc:'./img/enemy/_DeathNoMovement.png',
+            imageSrc: './img/enemy/_DeathNoMovement.png',
             framesMax: 10
         }
     },
     attackBox: {
         offset: {
-            x:-70,
-            y:100 
+            x: -70,
+            y: 100
         },
         width: 145,
         height: 130
@@ -193,25 +193,24 @@ function animate() {
     enemy.velocity.x = 0
 
     //p1 movement
-   
-    if (keys.a.pressed && lastkey === 'a'){
+
+    if (keys.a.pressed && lastkey === 'a') {
         player.velocity.x = -6
         player.switchSprite('run')
-    } else if (keys.d.pressed && lastkey === 'd'){ 
+    } else if (keys.d.pressed && lastkey === 'd') {
         player.velocity.x = 6
         player.switchSprite('run')
-    }else{
+    } else {
         player.switchSprite('idle')
     }
-    
+
     //p1 jumping
-    if(player.velocity.y < 0){
+    if (player.velocity.y < 0) {
         player.switchSprite('jump')
-    }
-    else if(player.velocity.y > 0){
+    } else if (player.velocity.y > 0) {
         player.switchSprite('fall')
     }
-      
+
 
     //p2 movement
     enemy.velocity.x = 0
@@ -221,15 +220,14 @@ function animate() {
     } else if (keys.ArrowRight.pressed && enemy.lastkey === 'ArrowRight') {
         enemy.velocity.x = 5
         enemy.switchSprite('run')
-    } else{
+    } else {
         enemy.switchSprite('idle')
     }
 
     //p2jumping
-    if(enemy.velocity.y < 0){
+    if (enemy.velocity.y < 0) {
         enemy.switchSprite('jump')
-    }
-    else if(enemy.velocity.y > 0){
+    } else if (enemy.velocity.y > 0) {
         enemy.switchSprite('fall')
     }
 
@@ -239,41 +237,45 @@ function animate() {
         recCollision({
             rectangle1: player,
             rectangle2: enemy
-          }) &&
-          player.attack &&
-          player.framesCurrent === 2
-        ) {
+        }) &&
+        player.attack &&
+        player.framesCurrent === 2
+    ) {
         enemy.takeHit()
         player.attack = false
 
         document.querySelector('#enemyHealth').style.width = enemy.health + '%'
     }
-  //a little if statement if p1 misses attack
-    if(player.attack && player.framesCurrent == 4){
+    //a little if statement if p1 misses attack
+    if (player.attack && player.framesCurrent == 4) {
         player.attack = false
-}
+    }
     // detect for collision & p1 taking dmg
     if (
         recCollision({
             rectangle1: enemy,
             rectangle2: player
-            }) &&
-            enemy.attack &&
-            enemy.framesCurrent === 2
-        ) {
+        }) &&
+        enemy.attack &&
+        enemy.framesCurrent === 2
+    ) {
         player.takeHit()
         enemy.attack = false
 
 
         document.querySelector('#playerHealth').style.width = player.health + '%'
     }
-      //a little if statement if p2 misses attack
-      if(enemy.attack && enemy.framesCurrent == 4){
+    //a little if statement if p2 misses attack
+    if (enemy.attack && enemy.framesCurrent == 4) {
         enemy.attack = false
-      }
+    }
 
-    if(enemy.health <= 0 || player.health <= 0){
-        winner({player,enemy,timerId})
+    if (enemy.health <= 0 || player.health <= 0) {
+        winner({
+            player,
+            enemy,
+            timerId
+        })
     }
 
 }
@@ -295,12 +297,12 @@ window.addEventListener('keydown', (event) => {
             player.velocity.y = -20
             break
 
-    //  p1 attack
+            //  p1 attack
         case ' ':
             player.isAttacking()
             break
 
-    //  p2 movement
+            //  p2 movement
         case 'ArrowRight':
             keys.ArrowRight.pressed = true
             enemy.lastkey = 'ArrowRight'
@@ -312,7 +314,7 @@ window.addEventListener('keydown', (event) => {
         case 'ArrowUp':
             enemy.velocity.y = -20
             break
-    // p2 attack
+            // p2 attack
         case 'ArrowDown':
             enemy.isAttacking()
             break
@@ -328,7 +330,7 @@ window.addEventListener('keyup', (event) => {
         case 'a':
             keys.a.pressed = false
             break
-    //  p2 controls
+            //  p2 controls
         case 'ArrowRight':
             keys.ArrowRight.pressed = false
             break

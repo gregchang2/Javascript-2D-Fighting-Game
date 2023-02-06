@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css.css" rel="stylesheet">
     <title>Baby's first game</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Knight vs. Knight</h1>
     <!--big container div-->
     <div class="container">
-        <!--small-->
-        <div class="smallcon">
-            <!--player1 health-->
-            <div class="p1health" style="position: relative; width: 100%;">
-                <div id="healthBar1"></div>
-                <div id="playerHealth"></div>
-            </div>
-            <!--Timer-->
-            <div id="timer">
-                10
-            </div>
-            <!--player2 health-->
-            <div class="p2health" style="position: relative; width: 100%;">
-                <div id = "healthBar2"></div>
-                <div id="enemyHealth"></div>
-            </div>
+      <!--small-->
+      <div class="smallcon">
+        <!--player1 health-->
+        <div class="p1health" style="position: relative; width: 100%;">
+          <div id="healthBar1"></div>
+          <div id="playerHealth"></div>
         </div>
-        <div id="displayText">
-            Draw
+        <!--Timer-->
+        <div id="timer"> 10 </div>
+        <!--player2 health-->
+        <div class="p2health" style="position: relative; width: 100%;">
+          <div id="healthBar2"></div>
+          <div id="enemyHealth"></div>
         </div>
-        <canvas></canvas>
+      </div>
+      <div id="displayText"> Draw </div>
+      <button id="playAgain" onClick="window.location.reload();"> Play again? </button>
+      <audio src="./audio/forestofdreams.wav"></audio>
+      <canvas></canvas>
     </div>
-    <div id = "playAgain">
-            <a href=gem.html> Play Again? </a>
-        </div>
     <script src="js/utilities.js"></script>
     <script src="js/classes.js"></script>
     <script src="script.js"></script>
-
-</body>
+  </body>
 </html>

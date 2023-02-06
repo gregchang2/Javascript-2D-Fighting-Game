@@ -19,7 +19,6 @@ function winner({player, enemy, timerId}){
         document.querySelector('#displayText').innerHTML = 'Player 2 Wins'
     }
     document.querySelector('#playAgain').style.display = 'flex';
-    document.querySelector('#playAgain').innerText;
 }
 
 //timer function for clock
