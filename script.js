@@ -283,7 +283,8 @@ function animate() {
 animate()
 
 window.addEventListener('keydown', (event) => {
-    //  p1 movement 
+    //  p1 movement
+    if (!player.dead){
     switch (event.key) {
         case 'd':
             keys.d.pressed = true
@@ -301,7 +302,10 @@ window.addEventListener('keydown', (event) => {
         case ' ':
             player.isAttacking()
             break
-
+    }
+}
+    if(!enemy.dead){
+    switch (event.key) {
             //  p2 movement
         case 'ArrowRight':
             keys.ArrowRight.pressed = true
@@ -319,18 +323,19 @@ window.addEventListener('keydown', (event) => {
             enemy.isAttacking()
             break
     }
+}
 })
 
 window.addEventListener('keyup', (event) => {
-    //  p2 controls
-    switch (event.key) {
+    //  p1 controls
+        switch (event.key) {
         case 'd':
             keys.d.pressed = false
             break
         case 'a':
             keys.a.pressed = false
             break
-            //  p2 controls
+    //  p2 controls
         case 'ArrowRight':
             keys.ArrowRight.pressed = false
             break
@@ -338,4 +343,5 @@ window.addEventListener('keyup', (event) => {
             keys.ArrowLeft.pressed = false
             break
     }
+
 })
