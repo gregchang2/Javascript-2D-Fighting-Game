@@ -1,10 +1,12 @@
 const canvas = document.querySelector('canvas');
-const c = canvas.getContext('2d'); //context to draw
+const c = canvas.getContext('2d');
 
+//canvas size
 canvas.width = 1920;
 canvas.height = 1080;
 
-c.fillRect(0, 0, canvas.width, canvas.height) //creates a rectangle to take over the background behhind canvas
+//creates a rectangle to take over the background behhind canvas
+c.fillRect(0, 0, canvas.width, canvas.height) 
 
 const gravity = 0.7
 
@@ -30,6 +32,7 @@ const bgCh = new Sprite({
 
 //p1 sprite
 const player = new Fighter({
+    //position of sprite on the canvas
     position: {
         x: 100,
         y: 100
@@ -50,6 +53,7 @@ const player = new Fighter({
         y: 0
     },
     sprites: {
+        //images of p1 doing different actions
         idle: {
             imageSrc: './img/player/_Idle.png',
             framesMax: 10
@@ -94,6 +98,7 @@ const player = new Fighter({
 
 //p2 sprite
 const enemy = new Fighter({
+    //position of sprite on the screen
     position: {
         x: 1600,
         y: 100
@@ -114,6 +119,7 @@ const enemy = new Fighter({
         y: 0
     },
     sprites: {
+        //images of p2 for different actions
         idle: {
             imageSrc: './img/enemy/_Idle.png',
             framesMax: 10
@@ -281,9 +287,10 @@ function animate() {
 }
 
 animate()
+myAudio.play()
 
 window.addEventListener('keydown', (event) => {
-    //  p1 movement
+    //  p1 movement when you press down on key on keybord
     if (!player.dead){
     switch (event.key) {
         case 'd':
@@ -300,6 +307,7 @@ window.addEventListener('keydown', (event) => {
 
             //  p1 attack
         case ' ':
+            swordSwing.play()
             player.isAttacking()
             break
     }
@@ -320,6 +328,7 @@ window.addEventListener('keydown', (event) => {
             break
             // p2 attack
         case 'ArrowDown':
+            swordSwing.play()
             enemy.isAttacking()
             break
     }

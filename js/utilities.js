@@ -1,5 +1,6 @@
 let lastkey
 
+//function for collision detection
 function recCollision({rectangle1, rectangle2}) {
     return(
         rectangle1.attackBox.position.x + rectangle1.attackBox.width >= rectangle2.position.x &&
@@ -8,6 +9,7 @@ function recCollision({rectangle1, rectangle2}) {
         rectangle1.attackBox.position.y <= rectangle2.position.y + rectangle2.height
     )
 }
+// function to determine winner
 function winner({player, enemy, timerId}){
     clearTimeout(timerId)
     document.querySelector('#displayText').style.display = 'flex'

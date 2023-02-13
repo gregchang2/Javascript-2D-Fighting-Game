@@ -12,7 +12,7 @@ class Sprite {
         this.framesHold = 15
         this.offset = offset
     }
-
+    //draws the image
     draw() {
         c.drawImage(
             this.image,
@@ -90,6 +90,7 @@ class Fighter extends Sprite{
         this.sprites = sprites
         this.dead = false
 
+        //for loop calls in a new image depending on the action a player makes
         for(const sprite in this.sprites){
             sprites[sprite].image = new Image()
             sprites[sprite].image.src = sprites[sprite].imageSrc
@@ -98,7 +99,7 @@ class Fighter extends Sprite{
     }
 
 
-
+    
     update() {
         this.draw()
         if(this.dead != true) this.animateFrames()
@@ -151,7 +152,7 @@ class Fighter extends Sprite{
         if(this.image === this.sprites.takeHit.image && this.framesCurrent < this.sprites.takeHit.framesMax -1)
         return
 
-        // this switch statement  
+        // this switch statement determines what animation plays when making an action
         switch (sprite) {
             case 'idle':
                 if (this.image !== this.sprites.idle.image) {

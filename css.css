@@ -38,7 +38,8 @@
      color: white;
      text-align: center;
      border-top: 6px solid rgb(26, 110, 0) ;
-     border-bottom: 6px solid rgb(26, 110, 0) ;
+     border-bottom: 6px solid rgb(26, 110, 0);
+     border-radius: 15px;
      -webkit-text-stroke: 1px;
      -webkit-text-stroke-color: black;
 }
@@ -70,7 +71,7 @@
  #playAgain{
      color: white;
      background-color:rgb(55, 166, 86);
-     border-radius:28px;
+     border-radius:25px;
      border:6px solid rgb(15, 63, 0);
      cursor:pointer;
      font-family:'BreatheFire';
@@ -128,4 +129,22 @@
  a:active{
      color: white;
      text-decoration: none;
+}
+#can{
+    width: 100%;
+}
+@media screen and (min-width: 800px) {
+    *{
+        width: auto;
+    }
+    h1{
+        font-size: 2vw;   
+    }
+    #displayText{
+        font-size: 1.5vw;
+    }
+    #playAgain{
+        font-size: 1.5vw;
+    }
+    
 }
