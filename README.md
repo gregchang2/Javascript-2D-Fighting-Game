@@ -1,14 +1,13 @@
-Javascript Game I created for a Javascript assignment 
 
-Game Project README
-This repository contains the source code and assets for a game project. The game is built using HTML5 Canvas and JavaScript.
+JavaScript 2D Fighting Game
+This repository contains the source code and assets for a JavaScript 2D fighting game. The game is built using HTML5 Canvas and JavaScript.
 
 Game Description
 The game is a 2D fighting game where two characters engage in combat. Players can control the characters using keyboard inputs to move, jump, and attack. The objective is to defeat the opponent by reducing their health to zero.
 
 Installation
-Clone the repository: git clone https://github.com/your-username/your-repo.git
-Open the project directory: cd your-repo
+Clone the repository: git clone https://github.com/gregchang2/Javascript-2D-Fighting-Game.git
+Open the project directory: cd Javascript-2D-Fighting-Game
 Launch the game by opening the index.html file in a web browser.
 Gameplay Controls
 Player 1 (Character 1):
