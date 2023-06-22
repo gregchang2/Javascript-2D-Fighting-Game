@@ -10,7 +10,7 @@ The game is a 2D fighting game where two characters engage in combat. Players ca
 
 1. Clone the repository: `git clone https://github.com/gregchang2/Javascript-2D-Fighting-Game.git`
 2. Open the project directory: `cd Javascript-2D-Fighting-Game`
-3. Launch the game by opening the `index.html` file in a web browser.
+3. Launch the game by opening the `gem.html` file in a web browser.
 
 ## Gameplay Controls
 
